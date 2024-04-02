@@ -1,15 +1,16 @@
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { Entypo } from '@expo/vector-icons';
-import { Feather } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+
 
 
 
 // importing the screens
 import Schedule_settings from './screens/Schedule_settings';
-import EnergyUsage from "./screens/energyUsage"
-import ControlStackScreens from "./screens/ControlStackScreens"
+
+import ControlStackScreens from "./screens/ControlStackScreens";
+import EnergyUsage from "./screens/EnergyUsage.js";
 
 
 
@@ -22,33 +23,44 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            if (route.name == "Energy Usage") {
-              return (
-                <Entypo name="home" size={25} color="black" />
-              );
-            }
-            if (route.name === "Schedule Settings") {
-              return (
-                <Feather name="settings" size={25} color="black" />
-              );
-            }
-            if (route.name === "Controls") {
-              return (
-                <Feather name="settings" size={25} color="black" />
-              );
-            }
-          },
-          tabBarActiveTintColor: "tomato",
-          tabBarInactiveTintColor: "black",
-        })}
-      >
+      <Tab.Navigator>
 
-        <Tab.Screen name="Energy Usage" component={EnergyUsage} />
-        <Tab.Screen name="Schedule Settings" component={Schedule_settings} />
-        <Tab.Screen name="Controls" component={ControlStackScreens} />
+        <Tab.Screen name="Schedule Settings" component={Schedule_settings}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <Ionicons 
+                name="calendar-clear" 
+                size={24} 
+                color={focused ? '#258F13' : 'grey'} 
+              />
+            )
+          
+          }} />
+        <Tab.Screen name="Controls" component={ControlStackScreens}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <MaterialIcons 
+                name="settings-remote" 
+                size={24} 
+                color={focused ? '#258F13' : 'grey'} 
+              />
+            )
+          
+          
+          }} />
+        <Tab.Screen name="Energy Usage" component={EnergyUsage} 
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <MaterialIcons 
+                name="energy-savings-leaf" 
+                size={24} 
+                color={focused ? '#258F13' : 'grey'} 
+              />
+            )
+          
+          }}
+        />
+
       </Tab.Navigator>
     </NavigationContainer>
   );
