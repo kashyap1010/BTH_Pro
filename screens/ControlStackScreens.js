@@ -1,4 +1,4 @@
-import {View, Text, Button, StyleSheet} from "react-native"
+import { View, Text, Button, StyleSheet } from "react-native"
 
 
 // import of the stack relatd elements
@@ -14,23 +14,23 @@ import CoffeeControl from './CoffeeControl'
 
 
 const ControlStackScreens = () => {
-return(
-<Stack.Navigator screenOptions={{ headerShown: true }}>
-<Stack.Screen name="Control" component={Controls}/>
-<Stack.Screen name="LightControl" component={LightControl}/>
-<Stack.Screen name="FanControl" component={FanControl}/>
-<Stack.Screen name="CoffeeControl" component={CoffeeControl}/>
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: true }}>
+            <Stack.Screen name="Control" component={Controls} />
+            <Stack.Screen name="LightControl" component={LightControl} />
+            <Stack.Screen name="FanControl" component={FanControl} />
+            <Stack.Screen name="CoffeeControl" component={CoffeeControl} />
 
-</Stack.Navigator>
-)
+        </Stack.Navigator>
+    )
 }
 
 
 const styles = StyleSheet.create({
-container: {
-flex: 1,
-backgroundColor: '#fff',
-},
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
 });
 
 

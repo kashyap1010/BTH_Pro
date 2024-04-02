@@ -1,8 +1,3 @@
-//  Week 7 S01
-//  how to do Tab naviagtion
-//  how to combine Tab+ stack navigation
-//  how to pass dynamic data from one screen to another screen using button pressed parameters
-//  how to customise tab icons and colors
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
