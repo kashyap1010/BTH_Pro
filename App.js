@@ -10,8 +10,7 @@ import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import Schedule_settings from './screens/Schedule_settings';
 
 import ControlStackScreens from "./screens/ControlStackScreens";
-import EnergyUsage from "./screens/EnergyUsage.js";
-
+import EnergyUsage from "./screens/energyUsage";
 
 
 // react navigation imports
