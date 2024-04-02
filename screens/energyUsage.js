@@ -4,7 +4,7 @@ import React from 'react'
  const EnergyUsage = () => {
   return (
     <View>
-      <Text>energyUsage Screen</Text>
+      <Text>energyUsage Screen </Text>
     </View>
   )
 }
