@@ -1,0 +1,31 @@
+# Dependency directories
+node_modules/
+ios/Pods/
+android/.gradle/
+android/app/build/
+
+# OSX directory attributes
+.DS_Store
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Build files
+/build/
+
+# Logs and testing files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+jest-debug.log*
+
+# Environment variables
+.env
+
+# OS generated files
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
