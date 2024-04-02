@@ -5,8 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 
 // import LightControl from "./LightControl";
 
-const Controls = () => {
-  const navigation = useNavigation();
+const Controls = ({navigation}) => {
+  //const navigation = useNavigation();
   const [appliances, setAppliances] = useState([
     { id: 1, name: 'Light', status: false, screen: 'LightControl' },
     { id: 2, name: 'Fan', status: false, screen: 'FanControl' },

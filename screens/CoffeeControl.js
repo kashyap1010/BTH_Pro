@@ -3,11 +3,13 @@ import { View, Text, Image, Pressable, StyleSheet } from 'react-native';
 import SegmentedControl from '@react-native-segmented-control/segmented-control';
 
 const CoffeeControl = () => {
-    const [roastType, setRoastType] = useState(-1);
-    const [size, setSize] = useState(-1);
+    const [roastType, setRoastType] = useState(null);
+    const [roast, setRoast] = useState(''); // ['Regular', 'Dark Roast', 'Decaf'
+    const [size, setSize] = useState(null);
+    const [sizeValue, setSizeValue] = useState(''); // ['Small', 'Medium', 'Large'
 
     const handleBrew = () => {
-        if (roastType === -1 || size === -1) {
+        if (roastType === null || size === null) {
             // Validation message
             return alert('Please fill in all required fields.');
         } else {
@@ -33,7 +35,7 @@ const CoffeeControl = () => {
                     values={['Regular', 'Dark Roast', 'Decaf']}
                     selectedIndex={roastType}
                     onChange={(event) => setRoastType(event.nativeEvent.selectedSegmentIndex)}
-                    onValueChange={setRoastType}
+                    onValueChange={setRoast}
                 />
             </View>
 
@@ -45,7 +47,7 @@ const CoffeeControl = () => {
                     values={['Small', 'Medium', 'Large']}
                     selectedIndex={size}
                     onChange={(event) => setSize(event.nativeEvent.selectedSegmentIndex)}
-                    onValueChange={setSize}
+                    onValueChange={setSizeValue}
                 />
             </View>
 

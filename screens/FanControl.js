@@ -3,10 +3,12 @@ import { View, Text, Image, Pressable, StyleSheet, Switch } from 'react-native';
 import SegmentedControl from '@react-native-segmented-control/segmented-control';
 
 const FanControl = () => {
-  const [speed, setSpeed] = useState(-1);
-  const [direction, setDirection] = useState(-1);
+  const [speed, setSpeed] = useState(null);
+  const [direction, setDirection] = useState(null);
   const [isFanOn, setIsFanOn] = useState(false);
 
+  const [speedValue, setSpeedValue] = useState(''); // ['Low', 'Medium', 'High']
+  const [directionValue, setDirectionValue] = useState(''); // ['Clockwise', 'Anti-Clockwise']
 
   return (
     <View style={styles.container}>
@@ -29,7 +31,7 @@ const FanControl = () => {
           values={['Low', 'Medium', 'High']}
           selectedIndex={speed}
           onChange={(event) => setSpeed(event.nativeEvent.selectedSegmentIndex)}
-          onValueChange={setSpeed}
+          onValueChange={setSpeedValue}
         />
       </View>
 
@@ -41,7 +43,7 @@ const FanControl = () => {
           values={['Clockwise', 'Anti-Clockwise']}
           selectedIndex={direction}
           onChange={(event) => setDirection(event.nativeEvent.selectedSegmentIndex)}
-          onValueChange={setDirection}
+          onValueChange={setDirectionValue}
         />
       </View>
 
