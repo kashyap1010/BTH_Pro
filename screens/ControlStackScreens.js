@@ -11,6 +11,7 @@ import Controls from "./Controls";
 import LightControl from "./LightControl"
 import FanControl from "./FanControl"
 import CoffeeControl from './CoffeeControl'
+import AcControl from "./AcControl";
 
 
 const ControlStackScreens = () => {
@@ -20,7 +21,7 @@ const ControlStackScreens = () => {
             <Stack.Screen name="LightControl" component={LightControl} />
             <Stack.Screen name="FanControl" component={FanControl} />
             <Stack.Screen name="CoffeeControl" component={CoffeeControl} />
-
+            <Stack.Screen name="AcControl" component={AcControl} />
         </Stack.Navigator>
     )
 }

@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         marginBottom: 0,
-        marginTop: -50,
+        marginTop: -15,
 
     },
     text: {

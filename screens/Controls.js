@@ -12,7 +12,7 @@ const Controls = ({navigation}) => {
     { id: 2, name: 'Fan', status: false, screen: 'FanControl' },
     { id: 3, name: 'Heating', status: false, screen: 'HeatingControl' },
     { id: 4, name: 'Coffee', status: false, screen: 'CoffeeControl' },
-    { id: 5, name: 'TV', status: false, screen: 'TVControl' },
+    { id: 5, name: 'A.C', status: false, screen: 'AcControl' },
   ]);
 
   const toggleApplianceStatus = (id) => {
