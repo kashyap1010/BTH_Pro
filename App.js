@@ -23,6 +23,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
+      <Tab.Screen name="Controls" component={ControlStackScreens}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <MaterialIcons 
+                name="settings-remote" 
+                size={24} 
+                color={focused ? '#258F13' : 'grey'} 
+              />
+            ),
+          }} />
 
         <Tab.Screen name="Schedule Settings" component={Schedule_settings}
           options={{
@@ -33,19 +43,6 @@ export default function App() {
                 color={focused ? '#258F13' : 'grey'} 
               />
             )
-          
-          }} />
-        <Tab.Screen name="Controls" component={ControlStackScreens}
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <MaterialIcons 
-                name="settings-remote" 
-                size={24} 
-                color={focused ? '#258F13' : 'grey'} 
-              />
-            ),
-           
-          
           
           }} />
         <Tab.Screen name="Energy Usage" component={EnergyUsage} 

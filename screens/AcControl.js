@@ -28,7 +28,7 @@ const ACControl = ({route}) => {
     <View style={styles.container}>
       <View style={styles.acContainer}>
         <Image
-          source={require('../assets/fan_image2.png')}
+          source={require('../assets/Ac.png')}
           style={styles.image}
         />
           <Text style={styles.productName}>Living Room AC</Text>
@@ -91,9 +91,9 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   image: {
-    width: 200,
+    width: 300,
     height: 200,
-    // marginBottom: 10,
+    marginBottom: 10,
   },
   productName: {
     fontSize: 24,
