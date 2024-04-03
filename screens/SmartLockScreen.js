@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, Image, Pressable, StyleSheet, Switch } from 'react-native';
 
-const SmartLockScreen = () => {
-    const [isLocked, setIsLocked] = useState(true);
+const SmartLockScreen = ({route}) => {
+    const [isLocked, setIsLocked] = useState(route.params.applianceStatus);
     const [isAutoLockEnabled, setIsAutoLockEnabled] = useState(false);
 
     const toggleLock = () => {
@@ -20,9 +20,17 @@ const SmartLockScreen = () => {
                 source={require('../assets/smart_lock.webp')}
                 style={styles.lockImage}
             />
-            <Text style={styles.title}>{isLocked ? 'Locked' : 'Unlocked'}</Text>
-            <Pressable onPress={toggleLock} style={styles.lockButton}>
-                <Text style={styles.lockButtonText}>{isLocked ? 'Unlock' : 'Lock'}</Text>
+            <Text style={styles.title}>{isLocked ? 'Unlocked' : 'Locked'}</Text>
+            <Pressable
+                style={({ pressed }) => [
+                    {
+                        backgroundColor: isLocked ? 'gray' : 'green',
+                    },
+                    styles.lockButton,
+                ]}
+                onPress={() => setIsLocked(!isLocked)}
+            >
+                <Text style={styles.lockButtonText}>{isLocked ? 'Lock' : 'Unlock'}</Text>
             </Pressable>
             <View style={styles.autoLockContainer}>
                 <Text style={styles.autoLockLabel}>Auto Lock</Text>
@@ -34,7 +42,7 @@ const SmartLockScreen = () => {
                 />
             </View>
 
-            
+
         </View>
     );
 };
@@ -51,6 +59,7 @@ const styles = StyleSheet.create({
         height: 150,
         marginBottom: 20,
         justifyContent: 'center',
+        marginLeft: 30
     },
     title: {
         fontSize: 24,
@@ -58,16 +67,18 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     lockButton: {
-        backgroundColor: '#4CAF50',
+        // backgroundColor: '#4CAF50',
         paddingVertical: 12,
         paddingHorizontal: 50,
         borderRadius: 30,
         marginBottom: 20,
+        width: '60%'
     },
     lockButtonText: {
-        color: 'black',
+        color: 'white',
         fontSize: 18,
         fontWeight: 'bold',
+        textAlign: 'center'
     },
     autoLockContainer: {
         flexDirection: 'row',

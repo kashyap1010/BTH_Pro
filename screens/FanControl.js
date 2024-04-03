@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { View, Text, Image, Pressable, StyleSheet } from 'react-native';
 import SegmentedControl from '@react-native-segmented-control/segmented-control';
 
-const FanControl = () => {
+const FanControl = ({route}) => {
   const [speed, setSpeed] = useState(null);
   const [direction, setDirection] = useState(null);
-  const [isFanOn, setIsFanOn] = useState(false);
+  const [isFanOn, setIsFanOn] = useState(route.params.applianceStatus);
 
   const [speedValue, setSpeedValue] = useState(''); // ['Low', 'Medium', 'High']
   const [directionValue, setDirectionValue] = useState(''); // ['Clockwise', 'Anti-Clockwise']
