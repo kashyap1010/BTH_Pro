@@ -10,7 +10,7 @@ const Controls = ({navigation}) => {
   const [appliances, setAppliances] = useState([
     { id: 1, name: 'Light', status: false, screen: 'LightControl' },
     { id: 2, name: 'Fan', status: false, screen: 'FanControl' },
-    { id: 3, name: 'Heating', status: false, screen: 'HeatingControl' },
+    { id: 3, name: 'Smart Lock', status: false, screen: 'SmartLockScreen' },
     { id: 4, name: 'Coffee', status: false, screen: 'CoffeeControl' },
     { id: 5, name: 'A.C', status: false, screen: 'AcControl' },
   ]);

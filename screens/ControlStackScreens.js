@@ -12,6 +12,7 @@ import LightControl from "./LightControl"
 import FanControl from "./FanControl"
 import CoffeeControl from './CoffeeControl'
 import AcControl from "./AcControl";
+import SmartLockScreen from './SmartLockScreen'
 
 
 const ControlStackScreens = () => {
@@ -22,6 +23,7 @@ const ControlStackScreens = () => {
             <Stack.Screen name="FanControl" component={FanControl} />
             <Stack.Screen name="CoffeeControl" component={CoffeeControl} />
             <Stack.Screen name="AcControl" component={AcControl} />
+            <Stack.Screen name="SmartLockScreen" component={SmartLockScreen} />
         </Stack.Navigator>
     )
 }
