@@ -133,6 +133,9 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     padding: 20,
+    height: '100%',
+    width: '100%',
+    backgroundColor: '#F5FCFF',
   },
   section: {
     marginBottom: 20,
