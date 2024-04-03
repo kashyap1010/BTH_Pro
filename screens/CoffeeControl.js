@@ -74,10 +74,13 @@ const CoffeeControl = () => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'column',
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: 60,
-        padding: 20
+        // marginTop: 60,
+        padding: 20,
+        backgroundColor: '#F5FCFF',
+        height: '100%'
+        
     },
     image: {
         width: 200,

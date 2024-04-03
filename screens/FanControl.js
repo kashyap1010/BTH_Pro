@@ -65,7 +65,9 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
     alignItems: 'center',
-    padding: 20
+    padding: 20,
+    backgroundColor: '#F5FCFF',
+    height: '100%'
   },
   image: {
     width: 200,

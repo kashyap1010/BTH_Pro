@@ -83,7 +83,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FAFAFA',
-    padding: 20
+    padding: 20,
+    backgroundColor: '#F5FCFF',
   },
   acContainer: {
     alignItems: 'center',
