@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#F5FCFF',
+    padding: 20,
   },
   lightBulbImage: {
     width: 150,
@@ -86,14 +87,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 50,
     borderRadius: 30,
     marginBottom: 20,
+    width: '90%'
   },
   controlButtonText: {
     color: '#FFF',
     fontSize: 18,
     fontWeight: 'bold',
+    textAlign:'center',
   },
   sliderContainer: {
-    width: '80%',
+    width: '90%',
     marginBottom: 20,
   },
   sliderLabel: {

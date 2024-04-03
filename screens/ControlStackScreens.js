@@ -17,7 +17,7 @@ import SmartLockScreen from './SmartLockScreen'
 
 const ControlStackScreens = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Navigator screenOptions={{ headerShown: true }}>
             <Stack.Screen name="Control" component={Controls} />
             <Stack.Screen name="LightControl" component={LightControl} />
             <Stack.Screen name="FanControl" component={FanControl} />
