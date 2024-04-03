@@ -83,9 +83,9 @@ const styles = StyleSheet.create({
   },
   controlButton: {
     backgroundColor: '#BDBDBD',
-    paddingVertical: 12,
-    paddingHorizontal: 50,
-    borderRadius: 30,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 20,
     marginBottom: 20,
     width: '90%'
   },
@@ -102,23 +102,11 @@ const styles = StyleSheet.create({
   sliderLabel: {
     fontSize: 18,
     marginBottom: 10,
+    fontWeight: 'bold',
   },
   slider: {
     width: '100%',
   },
-  colorPickerContainer: {
-    width: '80%',
-    marginBottom: 20,
-  },
-  colorPickerLabel: {
-    fontSize: 18,
-    marginBottom: 10,
-  },
-  colorPicker: {
-    width: '100%',
-    aspectRatio: 1,
-  },
-
 });
 
 export default LightControl;

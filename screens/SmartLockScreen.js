@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#F5FCFF',
+        padding: 20,
     },
     lockImage: {
         width: 150,
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 50,
         borderRadius: 30,
         marginBottom: 20,
-        width: '60%'
+        width: '90%'
     },
     lockButtonText: {
         color: 'white',

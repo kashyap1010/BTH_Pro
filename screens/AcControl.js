@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   productName: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#424242',
   },
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     color: '#424242',
   },
   segmentedControl: {
-    width: 300,
+    width: 315,
   },
   onOffButton: {
     marginTop: 20,
@@ -142,9 +142,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 20,
     width: '90%',
-    height: 50,
+    // height: 50,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   onOffButtonText: {
     color: 'white',

@@ -49,7 +49,8 @@ const Controls = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#F5F5F5',
+    // backgroundColor: '#F5FCFF',
+    height: '100%'
   },
   applianceContainer: {
     flexDirection: 'row',
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     backgroundColor: 'white',
     padding: 20,
-    borderRadius: 20,
+    borderRadius: 30,
   },
   applianceName: {
     fontSize: 18,
