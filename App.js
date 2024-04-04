@@ -32,6 +32,7 @@ export default function App() {
                 color={focused ? '#258F13' : 'grey'} 
               />
             ),
+            headerShown: false,
           }} />
 
         <Tab.Screen name="Schedule Settings" component={Schedule_settings}
