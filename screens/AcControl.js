@@ -5,7 +5,8 @@ import SegmentedControl from '@react-native-segmented-control/segmented-control'
 const ACControl = ({route}) => {
   const [isACOn, setIsACOn] = useState(false);
   const [temperature, setTemperature] = useState(24);
-  const [mode, setMode] = useState('Cool');
+  const [modeIndex, setModeIndex] = useState(null);
+  const [mode, setModeValue] = useState('');
   const [isFanOn, setIsFanOn] = useState(route.params.applianceStatus);
 
   const increaseTemperature = () => {
@@ -52,14 +53,15 @@ const ACControl = ({route}) => {
         <SegmentedControl
           style={styles.segmentedControl}
           values={['Cool', 'Dry', 'Fan', 'Normal']}
-          selectedIndex={mode === 'Cool' ? 0 : mode === 'Dry' ? 1 : mode === 'Fan' ? 2 : 3}
-          onChange={(index) => setMode(index === 0 ? 'Cool' : index === 1 ? 'Dry' : index === 2 ? 'Fan' : 'Normal')}
+          selectedIndex={modeIndex}
+          onChange={(event) => setModeIndex(event.nativeEvent.selectedSegmentIndex)}
           activeFontStyle={{ color: 'white' }}
           activeBackgroundColor="#4CAF50"
           fontStyle={{ fontSize: 16 }}
           backgroundColor="#E0E0E0"
           tintColor="#4CAF50"
           segmentedControlHeight={40}
+          onValueChange={setModeValue}
         />
       </View>
       <Pressable
