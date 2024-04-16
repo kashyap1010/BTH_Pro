@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Pressable, StyleSheet, Switch, TextInput } from 'react-native';
-import { buildUnavailableHoursBlocks } from 'react-native-calendars/src/timeline/Packer';
+import { View, Text, Pressable, StyleSheet, Switch, TextInput, Modal } from 'react-native';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 
 const Schedule_settings = () => {
@@ -10,6 +9,8 @@ const Schedule_settings = () => {
   const [selectedTime, setSelectedTime] = useState(new Date());
   const [repeatOption, setRepeatOption] = useState('Daily');
   const [isLightOn, setIsLightOn] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false);
 
   // Function to toggle light state
   const toggleLight = () => {
@@ -68,6 +69,9 @@ const Schedule_settings = () => {
         console.log('Light state changed at scheduled time');
       }, timeDifference);
     }
+
+    // Show success message modal
+    setIsSuccessModalVisible(true);
   };
 
   return (
@@ -100,11 +104,26 @@ const Schedule_settings = () => {
       </View>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Repeat Options</Text>
-        <TextInput
-          style={styles.input}
-          value={repeatOption}
-          onChangeText={handleRepeatOptionChange}
-        />
+        <Pressable style={styles.input} onPress={() => setIsModalVisible(true)}>
+          <Text>{repeatOption}</Text>
+        </Pressable>
+        <Modal
+          visible={isModalVisible}
+          transparent={true}
+          animationType="slide"
+          onRequestClose={() => setIsModalVisible(false)}
+        >
+          <View style={styles.modalContainer}>
+            <View style={styles.modalContent}>
+              <Pressable style={styles.modalOption} onPress={() => { setRepeatOption('Daily'); setIsModalVisible(false); }}>
+                <Text style={styles.modalOptionText}>Daily</Text>
+              </Pressable>
+              <Pressable style={styles.modalOption} onPress={() => { setRepeatOption('Weekly'); setIsModalVisible(false); }}>
+                <Text style={styles.modalOptionText}>Weekly</Text>
+              </Pressable>
+            </View>
+          </View>
+        </Modal>
       </View>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Light Settings</Text>
@@ -123,10 +142,25 @@ const Schedule_settings = () => {
         <Pressable style={[styles.button, styles.saveButton]} onPress={saveSchedule}>
           <Text style={styles.buttonText}>Save</Text>
         </Pressable>
-        <Pressable style={[styles.button, styles.cancelButton]} onPress={() => {}}>
+        {/* <Pressable style={[styles.button, styles.cancelButton]} onPress={() => {}}>
           <Text style={styles.buttonText}>Cancel</Text>
-        </Pressable>
+        </Pressable> */}
       </View>
+      <Modal
+        visible={isSuccessModalVisible}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setIsSuccessModalVisible(false)}
+      >
+        <View style={styles.modalContainer}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalMessage}>Schedule Saved Successfully!</Text>
+            <Pressable style={styles.closeButton} onPress={() => setIsSuccessModalVisible(false)}>
+              <Text style={styles.buttonText}>Close</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
@@ -176,11 +210,12 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    width: '100%'
   },
   button: {
     padding: 10,
     borderRadius: 5,
-    width: '47%'
+    width: '100%'
   },
   saveButton: {
     backgroundColor: 'green',
@@ -193,6 +228,43 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center'
   },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    padding: 30,
+    borderRadius: 10,
+    elevation: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalOption: {
+    padding: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#CCCCCC',
+    alignItems: 'center'
+  },
+  modalOptionText: {
+    fontSize: 18,
+    fontWeight: 'bold'
+  },
+  modalMessage: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    textAlign: 'center'
+  },
+  closeButton: {
+    padding: 10,
+    borderRadius: 5,
+    backgroundColor: 'green',
+    width: '100%',
+    alignItems: 'center',
+  }
 });
 
 export default Schedule_settings;
