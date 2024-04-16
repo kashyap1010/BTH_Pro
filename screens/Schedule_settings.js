@@ -82,6 +82,7 @@ const Schedule_settings = () => {
           mode="date"
           onConfirm={handleConfirmDate}
           onCancel={hideDatePicker}
+          textColor="black"
         />
       </View>
       <View style={styles.section}>
@@ -94,6 +95,7 @@ const Schedule_settings = () => {
           mode="time"
           onConfirm={handleConfirmTime}
           onCancel={hideTimePicker}
+          textColor="black"
         />
       </View>
       <View style={styles.section}>
